@@ -28,7 +28,7 @@ X,Y = np.meshgrid(x,y)
 Z = X*0
 
 
-tmp = Image.open("base.jpg")
+tmp = Image.open("11_NP3_011_0.jpg")
 converted = tmp.convert()
 
 
@@ -47,8 +47,8 @@ for i in range(1024):
 #     Z += gaussian(X,Y,xo,yo,amp=peak_height,sigmax=widthx,sigmay=widthy)
 
 #of course, add some noise:
-# Z = Z + scipy.ndimage.gaussian_filter(0.5*noise_level*np.random.rand(size,size),sigma=5)    
-# Z = Z + scipy.ndimage.gaussian_filter(0.5*noise_level*np.random.rand(size,size),sigma=1)    
+# Z = Z + scipy.ndimage.gaussian_filter(0.5*noise_level*np.random.rand(size,size),sigma=5)
+# Z = Z + scipy.ndimage.gaussian_filter(0.5*noise_level*np.random.rand(size,size),sigma=1)
 
 t = time.time() #Start timing the peak-finding algorithm
 
@@ -65,7 +65,7 @@ peak_slices = scipy.ndimage.find_objects(labeled_image)
 print 'Time after finding objects: %.5f seconds'%(time.time()-t)
 
 def centroid(data):
-    h,w = np.shape(data)   
+    h,w = np.shape(data)
     x = np.arange(0,w)
     y = np.arange(0,h)
 
